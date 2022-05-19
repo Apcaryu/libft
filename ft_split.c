@@ -6,7 +6,7 @@
 /*   By: apellegr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 13:57:55 by apellegr          #+#    #+#             */
-/*   Updated: 2022/05/16 17:37:36 by apellegr         ###   ########.fr       */
+/*   Updated: 2022/05/18 19:23:44 by apellegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	the_words(char const *s, char c)
 	nb_word = 1;
 	while (s[idx] != '\0')
 	{
-		if (s[idx] == c)
+		if (s[idx] == c && s[idx] != c)
 			nb_word++;
 		idx++;
 	}
@@ -41,7 +41,7 @@ static char	*in_the_tab(char *s, size_t *cntr, char c)
 		internal_cntr++;
 		*cntr += 1;
 	}
-	strout = malloc(sizeof(char) * internal_cntr + 1);
+	strout = ft_calloc(sizeof(char), internal_cntr + 1);
 	if (strout == NULL)
 		return (NULL);
 	ft_strlcpy(strout, s + in_cntr, internal_cntr + 1);
@@ -56,7 +56,7 @@ char	**ft_split(char const *s, char c)
 	int		word_cntr;
 
 	nb_word = the_words(s, c);
-	tabout = malloc(sizeof(char *) * nb_word);
+	tabout = ft_calloc(sizeof(char *), nb_word);
 	if (tabout == NULL)
 		return (NULL);
 	idx = 0;
