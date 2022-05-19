@@ -6,7 +6,7 @@
 /*   By: apellegr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:25:23 by apellegr          #+#    #+#             */
-/*   Updated: 2022/05/18 16:50:22 by apellegr         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:54:23 by apellegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	size;
 	char	*strout;
-	size_t		idx;
+	size_t	idx;
 
 	size = ft_strlen(s);
 	strout = ft_calloc(size + 1, 1);

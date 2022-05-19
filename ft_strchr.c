@@ -6,7 +6,7 @@
 /*   By: apellegr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 15:29:42 by apellegr          #+#    #+#             */
-/*   Updated: 2022/05/16 18:59:02 by apellegr         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:54:54 by apellegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t			cntr;
+	size_t	cntr;
 	char	*tmp;
 
 	cntr = 0;

@@ -6,7 +6,7 @@
 /*   By: apellegr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 16:23:17 by apellegr          #+#    #+#             */
-/*   Updated: 2022/05/16 18:35:20 by apellegr         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:56:58 by apellegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	cntr;
+	size_t			cntr;
 	unsigned char	*tmp;
 	unsigned char	chr;
 

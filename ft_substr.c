@@ -6,7 +6,7 @@
 /*   By: apellegr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 10:58:12 by apellegr          #+#    #+#             */
-/*   Updated: 2022/05/18 15:24:38 by apellegr         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:54:13 by apellegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*strout;
 	size_t	cntr;
-	size_t s_size;
+	size_t	s_size;
 
 	s_size = ft_strlen(s);
 	if (s_size < len)

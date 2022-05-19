@@ -6,7 +6,7 @@
 /*   By: apellegr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 18:01:16 by apellegr          #+#    #+#             */
-/*   Updated: 2022/05/17 19:24:54 by apellegr         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:55:37 by apellegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	ft_atoi(char *nptr)
 			pos *= -1;
 		cntr++;
 	}
-	
 	while ('0' <= nptr[cntr] && nptr[cntr] <= '9')
 	{
 		numb = (numb * 10) + (nptr[cntr] - '0');
