@@ -6,12 +6,12 @@
 /*   By: apellegr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 13:57:55 by apellegr          #+#    #+#             */
-/*   Updated: 2022/05/23 15:49:46 by apellegr         ###   ########.fr       */
+/*   Updated: 2022/05/24 16:02:03 by apellegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+/*#include <stdio.h>
 // Permet de connaitre la taille d'un mot a partir du pointeur de sa premiere 
 //lettre et de sa derniere lettre
 size_t	size_of_word(char *chr_start, char *chr_end)
@@ -91,7 +91,7 @@ char	**ft_split(char const *s, char c)
 	freezer(strout, 1);
 	return (strout);
 }
-
+*/
 
 /*
 static int    the_words(char const *s, char c)
@@ -301,6 +301,122 @@ char    **ft_split(char const *s, char c)
     return (tabout);
 }
 
+int main() {
+  
+  char base[] = "//Attention/der";
+  char **tab = ft_split(base, '/');
+  return 0;
+}
+*/
+
+/*
+#include <stdlib.h>
+#include <stdio.h>
+
+size_t    ft_strlcpy(char *dst, const char *src, size_t size)
+{
+    size_t    cntr;
+
+    cntr = 0;
+    if (size == 0)
+        return (strlen(src));
+    while (cntr < (size - 1) && src[cntr] != '\0')
+    {
+        dst[cntr] = src[cntr];
+        cntr++;
+    }
+    dst[cntr] = '\0';
+    return (strlen(src));
+}
+*/
+// -----Debut de split-----
+
+static int    the_words(char const *s, char c)
+{
+    size_t	idx;
+    int		nb_word;
+    size_t	size;
+
+    idx = 0;
+    nb_word = 1;
+    size = ft_strlen(s);
+    while (s[idx] != '\0')
+    {
+      while (s[idx] == c)
+      {
+        if (size <= idx)
+          break;
+        idx++;
+        if (s[idx] != c)
+          nb_word++;
+      }
+      idx++;
+    }
+    return (nb_word);
+}
+
+char    *cuter_detector(char *s, char c)
+{
+    size_t idx;
+    size_t size;
+
+    idx = 0;
+    size = ft_strlen(s);
+    while (s[idx] == c)
+    {
+        if (size <= idx)
+            return (NULL);
+        idx++;
+    }
+    return (s + idx);
+}
+
+static char    *in_the_tab(char *s, size_t *cntr, char c, char **tab)
+{
+    char    *tmp_ptr_start;
+    char    *tmp_ptr_end;
+
+    tmp_ptr_end = s;
+    tmp_ptr_start = cuter_detector(tmp_ptr_end, c);
+    if (tmp_ptr_start == NULL)
+      return (NULL);
+    tmp_ptr_end = ft_strchr(cuter_detector((tmp_ptr_start), c), c);
+    if (tmp_ptr_end == NULL)
+    {
+      tab[*cntr] = ft_calloc(sizeof(char), ft_strlen(tmp_ptr_start) + 1);
+      ft_strlcpy(tab[*cntr], tmp_ptr_start, ft_strlen(tmp_ptr_start) + 1);
+    }
+    else
+    {
+      tab[*cntr] = ft_calloc(sizeof(char), (size_t)(tmp_ptr_end - tmp_ptr_start) + 1);
+      ft_strlcpy(tab[*cntr], tmp_ptr_start, (size_t)(tmp_ptr_end - tmp_ptr_start) + 1);
+    }
+    return (tmp_ptr_end);
+}
+
+char    **ft_split(char const *s, char c)
+{
+    size_t        idx;
+    size_t        nb_word;
+    char    **tabout;
+    char    *tmp;
+
+    tmp = (char *)s;
+    nb_word = the_words(s, c);
+    tabout = ft_calloc(sizeof(char *), nb_word);
+    if (tabout == NULL)
+        return (NULL);
+    idx = 0;
+    while (idx < nb_word - 1)
+    {
+        tmp = in_the_tab(tmp, &idx, c, tabout);
+        if (tabout[idx] == NULL)
+            return (NULL);
+        idx++;
+    }
+    return (tabout);
+}
+/*
 int main() {
   
   char base[] = "//Attention/der";
