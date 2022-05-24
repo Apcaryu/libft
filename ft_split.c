@@ -6,7 +6,7 @@
 /*   By: apellegr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 13:57:55 by apellegr          #+#    #+#             */
-/*   Updated: 2022/05/24 16:02:03 by apellegr         ###   ########.fr       */
+/*   Updated: 2022/05/24 17:49:38 by apellegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -347,7 +347,7 @@ static int    the_words(char const *s, char c)
         if (size <= idx)
           break;
         idx++;
-        if (s[idx] != c)
+        if (s[idx] != c && s[idx] != '\0')
           nb_word++;
       }
       idx++;
@@ -393,7 +393,7 @@ static char    *in_the_tab(char *s, size_t *cntr, char c, char **tab)
     }
     return (tmp_ptr_end);
 }
-
+#include <stdio.h>
 char    **ft_split(char const *s, char c)
 {
     size_t        idx;
@@ -403,7 +403,8 @@ char    **ft_split(char const *s, char c)
 
     tmp = (char *)s;
     nb_word = the_words(s, c);
-    tabout = ft_calloc(sizeof(char *), nb_word);
+	printf("NbWord : %d\n", (int)nb_word);
+    tabout = ft_calloc(sizeof(char *), nb_word + 1);
     if (tabout == NULL)
         return (NULL);
     idx = 0;
@@ -422,5 +423,4 @@ int main() {
   char base[] = "//Attention/der";
   char **tab = ft_split(base, '/');
   return 0;
-}
-*/
+}*/
