@@ -6,34 +6,34 @@
 /*   By: apellegr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 13:57:55 by apellegr          #+#    #+#             */
-/*   Updated: 2022/05/25 15:58:01 by apellegr         ###   ########.fr       */
+/*   Updated: 2022/05/25 17:04:29 by apellegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int the_words(char const *s, char c, size_t nb_words, size_t idx)
+int	the_words(char const *s, char c, size_t nb_words, size_t idx)
 {
-	size_t size;
-	int    isWord;
+	size_t	size;
+	int		is_word;
 
 	size = ft_strlen(s);
-	isWord = 0;
+	is_word = 0;
 	while (idx < size)
 	{
 		if (s[idx] != c)
-			isWord = 1;
+			is_word = 1;
 		while (s[idx] == c)
 		{
 			if (size <= idx)
-				break;
-	  		idx++;
-	  		if (s[idx] != c && s[idx] != '\0')
+				break ;
+			idx++;
+			if (s[idx] != c && s[idx] != '\0')
 				nb_words++;
 		}
 		idx++;
-		if (isWord && idx >= size && nb_words < 1)
-	  		nb_words++;
+		if (is_word && idx >= size && nb_words < 1)
+			nb_words++;
 	}
 	return (nb_words);
 }
@@ -56,25 +56,25 @@ static char	*cuter_detector(char *s, char c)
 
 static char	*in_the_tab(char *s, size_t *cntr, char c, char **tab)
 {
-	char	*tmp_ptr_start;
-	char	*tmp_ptr_end;
+	char	*tp_start;
+	char	*tp_end;
 
-	tmp_ptr_end = s;
-	tmp_ptr_start = cuter_detector(tmp_ptr_end, c);
-	if (tmp_ptr_start == NULL)
+	tp_end = s;
+	tp_start = cuter_detector(tp_end, c);
+	if (tp_start == NULL)
 		return (NULL);
-	tmp_ptr_end = ft_strchr(cuter_detector((tmp_ptr_start), c), c);
-	if (tmp_ptr_end == NULL)
+	tp_end = ft_strchr(cuter_detector((tp_start), c), c);
+	if (tp_end == NULL)
 	{
-		tab[*cntr] = ft_calloc(sizeof(char), ft_strlen(tmp_ptr_start) + 1);
-		ft_strlcpy(tab[*cntr], tmp_ptr_start, ft_strlen(tmp_ptr_start) + 1);
+		tab[*cntr] = ft_calloc(sizeof(char), ft_strlen(tp_start) + 1);
+		ft_strlcpy(tab[*cntr], tp_start, ft_strlen(tp_start) + 1);
 	}
 	else
 	{
-		tab[*cntr] = ft_calloc(sizeof(char), (size_t)(tmp_ptr_end - tmp_ptr_start) + 1);
-		ft_strlcpy(tab[*cntr], tmp_ptr_start, (size_t)(tmp_ptr_end - tmp_ptr_start) + 1);
+		tab[*cntr] = ft_calloc(sizeof(char), (size_t)(tp_end - tp_start) + 1);
+		ft_strlcpy(tab[*cntr], tp_start, (size_t)(tp_end - tp_start) + 1);
 	}
-	return (tmp_ptr_end);
+	return (tp_end);
 }
 
 char	**ft_split(char const *s, char c)
