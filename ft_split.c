@@ -6,12 +6,44 @@
 /*   By: apellegr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 13:57:55 by apellegr          #+#    #+#             */
-/*   Updated: 2022/05/25 17:04:29 by apellegr         ###   ########.fr       */
+/*   Updated: 2022/05/26 12:14:08 by apellegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	the_words(char const *s, char c)
+{
+	size_t	size;
+	size_t	idx;
+	size_t	nb_words;
+	char	is_word;
+
+	size = ft_strlen(s);
+	idx = 0;
+	nb_words = 0;
+	while (idx < size)
+	{
+		while (s[idx] == c)
+		{
+			idx++;
+			is_word = 1;
+		}
+		while (s[idx] != c)
+		{
+			idx++;
+			is_word = 0;
+		}
+		if (is_word == 0)
+		{
+			nb_words++;
+		}
+		is_word = 0;
+		idx++;
+	}
+	return (nb_words);
+}
+/*
 int	the_words(char const *s, char c, size_t nb_words, size_t idx)
 {
 	size_t	size;
@@ -37,7 +69,7 @@ int	the_words(char const *s, char c, size_t nb_words, size_t idx)
 	}
 	return (nb_words);
 }
-
+*/
 static char	*cuter_detector(char *s, char c)
 {
 	size_t	idx;
@@ -85,7 +117,7 @@ char	**ft_split(char const *s, char c)
 	char	*tmp;
 
 	tmp = (char *)s;
-	nb_word = the_words(s, c, 0, 0);
+	nb_word = the_words(s, c);
 	tabout = ft_calloc(sizeof(char *), nb_word + 1);
 	if (tabout == NULL)
 		return (NULL);
