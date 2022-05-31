@@ -6,7 +6,7 @@
 /*   By: apellegr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 13:57:55 by apellegr          #+#    #+#             */
-/*   Updated: 2022/05/30 17:00:50 by apellegr         ###   ########.fr       */
+/*   Updated: 2022/05/31 13:40:07 by apellegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ static int	the_words(char const *s, char c)
 			is_word = 0;
 		if (s[idx] != c && tmp != 1)
 			is_word = 1;
-		if ((is_word == 0 || s[idx] == '\0') && tmp != is_word && tmp == 1)
+		if (is_word == 0 && tmp == 1)
 			nb_words++;
-		if (s[idx] == '\0' && tmp == 1)
+		if (s[idx] == '\0' && tmp == 1 && s[idx] != c)
 			nb_words++;
 		idx++;
 		tmp = is_word;
@@ -57,7 +57,7 @@ static char	*cuter_detector(char *s, char c)
 	return (s + idx);
 }
 
-static void freezer(char **tab)
+static void	freezer(char **tab)
 {
 	size_t	idx;
 
