@@ -6,7 +6,7 @@
 /*   By: apellegr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 10:30:49 by apellegr          #+#    #+#             */
-/*   Updated: 2022/06/01 17:53:53 by apellegr         ###   ########.fr       */
+/*   Updated: 2022/06/01 18:18:49 by apellegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ int		ft_lstsize(t_list *list);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));
 
 #endif
