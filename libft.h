@@ -6,7 +6,7 @@
 /*   By: apellegr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 10:30:49 by apellegr          #+#    #+#             */
-/*   Updated: 2022/06/01 14:44:58 by apellegr         ###   ########.fr       */
+/*   Updated: 2022/06/01 14:50:38 by apellegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,7 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+t_list	*ft_lstnew(void *content);
 
 #endif
