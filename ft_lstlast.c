@@ -6,7 +6,7 @@
 /*   By: apellegr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 16:06:29 by apellegr          #+#    #+#             */
-/*   Updated: 2022/06/01 17:33:53 by apellegr         ###   ########.fr       */
+/*   Updated: 2022/06/03 17:45:26 by apellegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*ptr;
-	t_list *tmp;
+	t_list	*tmp;
 
 	tmp = lst;
 	ptr = tmp;
