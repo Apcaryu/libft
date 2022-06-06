@@ -3,5 +3,6 @@
 Tripouille/
 libftTester/
 .vscode/
+.idea/
 gitACP.sh
 pNorm.sh
