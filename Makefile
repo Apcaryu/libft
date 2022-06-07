@@ -31,12 +31,10 @@ clean :
 
 fclean : clean
 	@rm -f $(NAME)
-	@echo "\033[33mall sources files and library are deleted\033[37m"
+	@echo "\033[33mall objects files and library are deleted\033[37m"
 
 re : fclean all
 
 bonus : fclean $(OBJS) $(OBJSBNS)
-#	$(CC) -c $(SRCS)
-#	$(CC) -c $(SRCSBNS)
 	@ar rc $(NAME) $(OBJS) $(OBJSBNS)
 	@echo "\033[32mbonus are created succesfully\033[37m"
