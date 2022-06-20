@@ -6,7 +6,7 @@
 /*   By: apellegr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 13:57:55 by apellegr          #+#    #+#             */
-/*   Updated: 2022/05/31 13:40:07 by apellegr         ###   ########.fr       */
+/*   Updated: 2022/06/20 15:05:42 by apellegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,15 @@ static char	*in_the_tab(char *s, size_t *cntr, char c, char **tab)
 	if (tp_end == NULL)
 	{
 		tab[*cntr] = ft_calloc(sizeof(char), ft_strlen(tp_start) + 1);
+		if (tab[*cntr] == NULL)
+			return (NULL);
 		ft_strlcpy(tab[*cntr], tp_start, ft_strlen(tp_start) + 1);
 	}
 	else
 	{
 		tab[*cntr] = ft_calloc(sizeof(char), (size_t)(tp_end - tp_start) + 1);
+		if (tab[*cntr] == NULL)
+			return (NULL);
 		ft_strlcpy(tab[*cntr], tp_start, (size_t)(tp_end - tp_start) + 1);
 	}
 	return (tp_end);
