@@ -6,7 +6,7 @@
 /*   By: apellegr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 18:29:37 by apellegr          #+#    #+#             */
-/*   Updated: 2022/05/19 14:00:03 by apellegr         ###   ########.fr       */
+/*   Updated: 2022/06/22 16:44:14 by apellegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	if ((long int)nmemb <= 0 || (long int)size <= 0)
-		return (NULL);
 	ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (NULL);
