@@ -6,7 +6,7 @@
 /*   By: apellegr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 18:19:35 by apellegr          #+#    #+#             */
-/*   Updated: 2022/06/02 16:28:53 by apellegr         ###   ########.fr       */
+/*   Updated: 2022/06/22 19:53:11 by apellegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,12 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 
 	if (lst)
 	{
-		target = (*lst)->next;
+		target = *lst;
 		while (target)
 		{
 			target = (*lst)->next;
 			ft_lstdelone(*lst, del);
 			*lst = target;
 		}
-		lst = NULL;
 	}
 }
