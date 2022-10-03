@@ -27,11 +27,11 @@ $(NAME): $(OBJS)
 
 clean :
 	@rm -f $(OBJS) $(OBJSBNS)
-	@echo "\033[33mall objects files are deleted\033[37m"
+	@echo "\033[33mobjects files of libft are deleted\033[37m"
 
 fclean : clean
 	@rm -f $(NAME)
-	@echo "\033[33mall objects files and library are deleted\033[37m"
+	@echo "\033[33m$(NAME) are deleted\033[37m"
 
 re : fclean all
 
