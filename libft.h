@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apellegr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: apellegr <apellegr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 10:30:49 by apellegr          #+#    #+#             */
-/*   Updated: 2022/06/22 17:31:58 by apellegr         ###   ########.fr       */
+/*   Updated: 2022/11/16 13:54:46 by apellegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include "ft_printf.h"
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
