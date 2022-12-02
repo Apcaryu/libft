@@ -6,7 +6,7 @@
 /*   By: apellegr <apellegr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 10:30:49 by apellegr          #+#    #+#             */
-/*   Updated: 2022/11/16 13:54:46 by apellegr         ###   ########.fr       */
+/*   Updated: 2022/12/02 17:40:35 by apellegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "ft_printf.h"
+
+typedef enum e_bool
+{
+	false = 0,
+	true = 1
+}	t_bool;
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
